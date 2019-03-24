@@ -1,20 +1,115 @@
 
 <!DOCTYPE html>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <html>
     <head>
         <title>News Gatherer</title>
-        <!-- data-main attribute tells require.js to load
-			 scripts/main.js after require.js loads. -->
-			 <!-- <script src="scripts/r.js"></script> -->
-			 <!-- <script>require(["scripts/main"])</script> -->
-			 <!-- <script>require("newsapi")</script> -->
-			 <!-- <script data-main="scripts" src="scripts/r.js"></script> -->
-			 <!-- <script data-main="scripts/main" src="scripts/r.js"></script> -->
-			 <script type="text/javascript" src="scripts/main.js"></script>
+
+			<script type="text/javascript" src="scripts/main.js"></script>
         
     </head>
-    <body>
-		<h1>News Chet</h1>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm">
+					<h1 class="h1">Wallace News Binoculars</h1>
+					<div class="form-group">
+						<!-- <label for="searchSpaceOptions">Search Space</label> -->
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							
+							<label class="btn btn-secondary active">
+								<input type="radio" name="searchSpaceOptions" id="option1" autocomplete="off" checked> Top Headlines
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="searchSpaceOptions" id="option2" autocomplete="off"> Everything
+							</label>
+						</div>
+						<br>
 
-    </body>
+						<div>
+							<label for="keywordSearch">Keyword</label>
+							<input  class="form-control" 
+									aria-required="true"
+									type="keywordSearch"
+									id="keywordSearch" 
+									placeholder="Enter Search Keyword" 
+									pattern="\d+" 
+									required="required">
+						</div>
+
+						<div class="form-group">
+							<label for="countrySearch">Country</label>
+							<input  class="form-control" id="countrySearch" placeholder="Enter Country Search">
+						</div>
+
+						<div class="form-group">
+							<label for="sourceSearch">Source</label>
+							<input  class="form-control" id="sourceSearch" placeholder="Enter Specific Source">
+						</div>
+
+						<!-- <div class="form-check">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						</div> -->
+
+						<button id= 'submit_search' value="Submit" class="btn btn-primary" onclick=searchNews()>Submit</button>
+					</div>
+
+					<h1 class="h2">Article</h1>
+					<dl class="row">
+						<dt class="col-sm-3">Attribute list</dt>
+						<dd class="col-sm-9"></dd>
+
+						<!-- <dt class="col-sm-3">Author</dt>
+						<dd class="col-sm-9">
+							<p id="author_field"></p>
+						</dd> -->
+
+						
+
+						<dt class="col-sm-3">Source</dt>
+						<dd class="col-sm-9" id=source_field></dd>
+
+						<dt class="col-sm-3">Author</dt>
+						<dd class="col-sm-9" id=author_field></dd>
+
+						<dt class="col-sm-3">Title</dt>
+						<dd class="col-sm-9" id=title_field></dd>
+						
+						<dt class="col-sm-3">Publish Date</dt>
+						<dd class="col-sm-9" id=publish_date_field></dd>
+
+						<dt class="col-sm-3">URL</dt>
+						<a class="col-sm-9" id=url_field></a>
+						<!-- <dd class="col-sm-9" id=url_field href="#"></dd> -->
+
+<!-- 
+						<dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+						<dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+
+						<dt class="col-sm-3">Nesting</dt>
+						<dd class="col-sm-9">
+							<dl class="row">
+							<dt class="col-sm-4">Nested definition list</dt>
+							<dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+							</dl>
+						</dd> -->
+					</dl>
+
+				</div>
+
+				<div class="col-sm">
+					
+					<div id="result_list" class="list-group">
+							<h1 class="h2">Article List</h1>
+						<!-- <a href="#" class="list-group-item list-group-item-action active">Article List</a> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
 </html>
+
+
