@@ -66,6 +66,7 @@ class NewsGatherer
 
             let url_field = document.getElementById('url_field')
             url_field.href = info.articles[article_id].url
+            url_field.target = "_blank"
             // url_field.setAttribute('href', info.articles[article_id].url)
             url_field.innerHTML = info.articles[article_id].url
             // document.getElementById('url_field').href = 'http://www.cnn.com/'
